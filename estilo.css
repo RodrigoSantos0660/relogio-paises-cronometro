@@ -1,0 +1,66 @@
+
+body{background-image:url("../desafio\ kiko/imagens/fundo2.jpg");
+    background-size: contain;
+}
+
+
+.titulo{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bandeiras{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.bands{margin-bottom: 15px;
+}
+#display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#relogios{
+    width: 270px;
+    height: 70px;
+    background-color:black;
+    font-size: large;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: yellow;
+    margin-top: 60px;
+} 
+
+#crono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cronometro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cro{width: 1024px;
+    height: 70px;
+    background-color:black;
+    font-size: large;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: yellow;
+    margin-top: 30px;
+}
+
+#cron{
+    text-align: center;
+}
+.rodape{text-align: center;}
+
+#f{text-align: center;
+font-size: 40px;}
+

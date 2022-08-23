@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio proposto kiko</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css"/>
+    <script>
+        
+//variaveis globais    
+  var tmpb;
+  var tmpa;
+  var tmpj;
+  var crob;
+  var croc;
+  var croj;
+
+//funcao intervalo tempo brasil
+  function brasil(){
+      clearInterval(tmpa)
+      clearInterval(tmpj)
+      clearInterval(croc)
+      clearInterval(croj)
+      tmpb=setInterval(bra,1000)
+      crob=setInterval(crobra,1000)
+  }
+//funcao relogio brasil
+   function bra()
+{
+   let data=new Date();
+   let hor=data.getHours();
+   let min=data.getMinutes();
+   let seg=data.getSeconds();
+
+   if(hor<10){
+       hor="0"+hor
+   }
+   if(min<10){
+       min="0"+min
+   }
+   if(seg<10){
+       seg="0"+seg
+   }
+   if(hor>24){
+       hor=hor-24
+   }
+   var horas= hor+":"+min+":"+seg;
+   document.getElementById("relogios").value= horas;
+//funcao tempo chile   
+}
+function argentina(){
+      clearInterval(tmpb)
+      clearInterval(tmpj)
+      clearInterval(crob)
+      clearInterval(croj)
+      tmpa=setInterval(arg,1000)
+      croc=setInterval(crochi,1000)
+  }
+  //funcao relogio chile
+  function arg(){
+   let data=new Date();
+   let hor=data.getHours()-1;
+   let min=data.getMinutes();
+   let seg=data.getSeconds();
+   
+
+   if(hor<10){
+       hor="0"+hor
+   }
+   if(min<10){
+       min="0"+min
+   }
+   if(seg<10){
+       seg="0"+seg
+   }
+   if(hor>24){
+       hor=hor-24
+   }
+   data.setHours(data.getHours()+3)
+   var horas= hor+":"+min+":"+seg;
+  document.getElementById("relogios").value= horas;
+}
+//funcao tempo japao
+
+function japao(){
+      clearInterval(tmpa);
+      clearInterval(tmpb);
+      clearInterval(crob);
+      clearInterval(croc);
+      tmpj=setInterval(jap,1000);
+      croj=setInterval(reve,1000);
+      
+
+  }
+  //funcao relogio japao
+
+   function jap()
+{
+   let data=new Date();
+   let hor=data.getHours()+12;
+   let min=data.getMinutes();
+   let seg=data.getSeconds();
+
+   if(hor<10){
+       hor="0"+hor
+   }
+   if(min<10){
+       min="0"+min
+   }
+   if(seg<10){
+       seg="0"+seg
+   }
+   if(hor>24){
+       hor=hor-24
+   }
+   var horas= hor+":"+min+":"+seg;
+   document.getElementById("relogios").value= horas;
+
+
+    //implementacao cronometro fim do ano
+
+
+                                                                         
+} 
+//cronometro japao
+function reve(){
+   var data_final = new Date("dec  31, 2022 00:00:00").getTime();
+   var data_atual = new Date().getTime();
+   var t = data_final - data_atual;
+   var dias = Math.floor(t / (1000 * 60 * 60 * 24)-1);
+   var horas = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)+12);
+   var minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+   var segundos = Math.floor((t % (1000 * 60)) / 1000);
+    document.getElementById("cro"). value = dias + "d "+ horas + "h " + minutos + "m " + segundos + "s "+"Em Toquio para o reveillon!";       
+
+}
+//cronometro chile
+function crochi(){
+   var data_final = new Date("dec  31, 2022 00:00:00").getTime();
+   var data_atual = new Date().getTime();
+   var t = data_final - data_atual;
+   var dias = Math.floor(t / (1000 * 60 * 60 * 24));
+   var horas = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)-1);
+   var minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+   var segundos = Math.floor((t % (1000 * 60)) / 1000);
+    document.getElementById("cro"). value = dias + "d "+ horas + "h " + minutos + "m " + segundos + "s "+"no chile para o reveillon!";       
+
+}
+//cronometro brasil
+function crobra(){
+   var data_final = new Date("dec 31, 2022 00:00:00").getTime();
+   var data_atual = new Date().getTime();
+   var t = data_final - data_atual;
+   var dias = Math.floor(t / (1000 * 60 * 60 * 24));
+   var horas = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+   var minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+   var segundos = Math.floor((t % (1000 * 60)) / 1000);
+    document.getElementById("cro"). value = dias + "d "+ horas + "h " + minutos + "m " + segundos + "s "+"no Brasil para o reveillon!";       
+
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="titulo">
+            <h1 id="tit"> Relogios Mundiais</h1>
+        </div>
+    </header>
+    <main>
+        <section id="ban">
+            <div id="bandeiras">
+            <figure>
+                <figcaption>Brasilia-Brasil(UTC-3)</figcaption>
+                <img id="ibra" onclick="bra(),brasil()" src="imagens/brasil.JPEG" alt="bandeira-brasil" width="150px" height="100px">
+            </figure>
+            <figure>
+                <figcaption>Santiago-Chile(UTC-2)</figcaption>
+                <img id="iarg"  onclick="arg(),argentina()" src="imagens/chile.png" alt="bandeira-argentina"width="150px" height="100px"> 
+            </figure>
+                <figure>
+                    <figcaption>Toqui-japao(UTC-12)</figcaption>
+                <img id="ijap" onclick="jap(),japao(),reve()" src="imagens/bandeira japao.JPEG" alt="bandeira-japao"width="150px" height="100px">
+            </figure>    
+                
+            </div>
+        </section>
+        <section id="display">
+            <input type="text" id="relogios"/>
+        </section>
+    </main>
+    <footer>
+        <h2 id="cron">
+            !!! Cronometro para o fim do ano!!!
+          </h2>
+          <h3 id="f">faltam</h3>
+    <div id="crono">
+        <div id="cronometro">
+        <input type="text" id="cro"/>
+        </div>
+    </div>
+       
+    </footer>
+</body>
